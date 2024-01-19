@@ -7,6 +7,9 @@ import {
   isEven,
   generateNumberText,
   calculateGrade,
+  findAverage,
+  squareDigits,
+  removeEverySecondElement,
 } from "./calculations";
 
 // function add(a, b) {
@@ -165,4 +168,86 @@ test("Calculate garde F", () => {
 
   // Ascent
   expect(a).toBe("F");
+});
+
+// function findAverage(numbers)
+test("Average of array [[1,2,3],[4,5,6]] === 3,5", () => {
+  // Arrange
+  const numbers = [
+    [1, 2, 3],
+    [4, 5, 6],
+  ];
+  // Act
+  const a = findAverage(numbers);
+  // Ascent
+  expect(a).toBe(3.5);
+});
+
+test("Average of array [[-1,-2,-3],[-4,-5,-6]] === -3,5", () => {
+  // Arrange
+  const numbers = [
+    [-1, -2, -3],
+    [-4, -5, -6],
+  ];
+  // Act
+  const a = findAverage(numbers);
+  // Ascent
+  expect(a).toBe(-3.5);
+});
+
+test("Average of array [5] === 5", () => {
+  // Arrange
+  const numbers = [[5]];
+  // Act
+  const a = findAverage(numbers);
+  // Ascent
+  expect(a).toBe(5);
+});
+
+// ??????
+// test("Average of array [] === NaN", () => {
+//   // Arrange
+//   const numbers = [];
+//   // Act
+//   const a = findAverage(numbers);
+//   // Ascent
+//   expect(a).toBe(NaN);
+// });
+
+// function squareDigits
+test("square digits array [0,1,2,3,4] === 14916", () => {
+  // Arrange
+  const numbers = [0, 1, 2, 3, 4];
+  // Act
+  const a = squareDigits(numbers);
+  // Ascent
+  expect(a).toBe(14916);
+});
+
+test("square digits array [-0,-1,-2,-3,-4] === 14916", () => {
+  // Arrange
+  const numbers = [-0, -1, -2, -3, -4];
+  // Act
+  const a = squareDigits(numbers);
+  // Ascent
+  expect(a).toBe(14916);
+});
+
+test("square digits array [0] === 0", () => {
+  // Arrange
+  const numbers = [0];
+  // Act
+  const a = squareDigits(numbers);
+  // Ascent
+  expect(a).toBe(0);
+});
+
+// function removeEverySecondElement
+test("remove every second element in array [0,1,2,3,4] => [0,2,4] ", () => {
+  // Arrange
+  const numbers = [0, 1, 2, 3, 4];
+  // Act
+  const a = removeEverySecondElement(numbers);
+  // Ascent
+  expect(a).toStrictEqual([0, 2, 4]);
 });

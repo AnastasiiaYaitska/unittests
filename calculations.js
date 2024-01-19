@@ -53,7 +53,7 @@ export function calculateGrade(score) {
   }
 }
 
-function findAverage(numbers) {
+export function findAverage(numbers) {
   let sum = 0;
   for (let i = 0; i < numbers.length; i++) {
     for (let j = 0; j < numbers[i].length; j++) {
@@ -84,8 +84,11 @@ export const getUserInfo = (user) => {
   };
 };
 
+// export function removeEverySecondElement(array) {
+//   return array.filter((index) => index + 2 == 0);
+// }
 export function removeEverySecondElement(array) {
-  return array.filter((index) => index + 2 == 0);
+  return array.filter((_, index) => index % 2 === 0);
 }
 
 export function calculateDiscount(originalPrice, discountPercentage) {
