@@ -137,7 +137,7 @@ export function gradeCalculator(studentScore) {
 }
 
 export function calculateAverageGrade(studentScores) {
-  const totalScore = 0;
+  let totalScore = 0;
   for (const studentScore of studentScores) {
     if (isNaN(studentScore)) {
       throw new Error("Invalid student score");
